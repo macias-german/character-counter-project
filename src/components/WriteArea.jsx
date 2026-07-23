@@ -9,8 +9,11 @@ const WriteArea = () => {
             <textarea
                 placeholder="Type your text here..."
                 onChange={(e) => setText(e.target.value)}
-                value={text}>
+                value={text}
+            >
             </textarea>
         </div>
     )
 }
+
+export { WriteArea }
