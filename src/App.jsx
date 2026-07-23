@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Header } from './components/Header.jsx'
 import { WriteArea } from './components/WriteArea.jsx'
 import { Controls } from './components/Controls.jsx'
-import './styles/style.css'
+import { GeneralCounters } from './components/GeneralCounters.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -12,6 +12,7 @@ function App() {
       <Header />
       <WriteArea />
       <Controls />
+      <GeneralCounters />
     </Section>
   )
 }
