@@ -159,6 +159,26 @@ header button:hover {
     box-shadow: 0 0 10px var(--light);
 }
 
+.checkbox .limiter {
+    background-color: var(--secondary-bg);
+    color: var(--secondary-text);
+    border: none;
+    width: 100px;
+    border-radius: 5px;
+    padding: 2px;
+    text-align: center;
+}
+
+.checkbox .limiter:focus {
+    outline: none;
+}
+
+.checkbox .limiter::-webkit-inner-spin-button,
+.checkbox .limiter::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 /* ---------- TERCER DIV: GENERAL-COUNTER ---------- */
 .general-counter {
     display: grid;

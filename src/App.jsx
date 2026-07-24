@@ -11,7 +11,7 @@ const App = () => {
   const [limitValue, setLimitValue] = useState(300)
 
   return (
-    <>
+    <section>
       <Header />
       <WriteArea
         text={text}
@@ -32,7 +32,7 @@ const App = () => {
         excludeSpaces={excludeSpaces}
         text={text}
       />
-    </>
+    </section>
   )
 }
 

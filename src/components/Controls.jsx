@@ -29,6 +29,8 @@ const Controls = ({ text, limitCharacter, limitValue, excludeSpaces, setLimitVal
                 {
                     limitCharacter &&
                     <input
+                        className="limiter"
+                        placeholder="Type limit..."
                         type="number"
                         value={limitValue}
                         onChange={(e) => setLimitValue(e.target.value)}
