@@ -1,7 +1,4 @@
-import { useState } from "react"
-
-const WriteArea = () => {
-    const [text, setText] = useState("")
+const WriteArea = ({ text, setText, limitCharacter, limitValue }) => {
 
     const handleChangeText = (e) => {
         const value = e.target.value
@@ -15,7 +12,7 @@ const WriteArea = () => {
     }
 
     return (
-        <div class="write-area">
+        <div className="write-area">
             <h1>Analyze your text in real-time.</h1>
             <textarea
                 placeholder="Type your text here..."

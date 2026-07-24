@@ -1,20 +1,15 @@
-import { useState } from "react"
+const Controls = ({ text, limitCharacter, limitValue, excludeSpaces, setLimitValue, setLimitCharacter, setExcludeSpaces }) => {
 
-const Controls = () => {
-    const [excludeSpaces, setExcludeSpaces] = useState(false)
-    const [limitCharacter, setLimitCharacter] = useState(false)
-    const [limitValue, setLimitValue] = useState(300)
-
-    handleLimitCharacter = (e) => {
-        if (text.value.lenght > 0) {
+    const handleLimitCharacter = (e) => {
+        if (text.length > 0) {
             return
         }
         setLimitCharacter(!limitCharacter)
     }
 
     return (
-        <div class="controls">
-            <div class="checkbox">
+        <div className="controls">
+            <div className="checkbox">
                 <label>
                     <input
                         type="checkbox"
@@ -36,7 +31,7 @@ const Controls = () => {
                     <input
                         type="number"
                         value={limitValue}
-                        onChange={(e) => serLimitValue(e.target.value)}
+                        onChange={(e) => setLimitValue(e.target.value)}
                     />
                 }
             </div>

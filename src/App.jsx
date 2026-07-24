@@ -4,17 +4,36 @@ import { WriteArea } from './components/WriteArea.jsx'
 import { Controls } from './components/Controls.jsx'
 import { GeneralCounters } from './components/GeneralCounters.jsx'
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const [text, setText] = useState("")
+  const [excludeSpaces, setExcludeSpaces] = useState(false)
+  const [limitCharacter, setLimitCharacter] = useState(false)
+  const [limitValue, setLimitValue] = useState(300)
 
   return (
-    <Section>
+    <>
       <Header />
-      <WriteArea />
-      <Controls />
-      <GeneralCounters />
-    </Section>
+      <WriteArea
+        text={text}
+        setText={setText}
+        limitCharacter={limitCharacter}
+        limitValue={limitValue}
+      />
+      <Controls
+        text={text}
+        limitCharacter={limitCharacter}
+        limitValue={limitValue}
+        excludeSpaces={excludeSpaces}
+        setLimitValue={setLimitValue}
+        setLimitCharacter={setLimitCharacter}
+        setExcludeSpaces={setExcludeSpaces}
+      />
+      <GeneralCounters
+        excludeSpaces={excludeSpaces}
+        text={text}
+      />
+    </>
   )
 }
 
-export default { App }
+export { App }
