@@ -1,5 +1,8 @@
 const Controls = ({ text, limitCharacter, limitValue, excludeSpaces, setLimitValue, setLimitCharacter, setExcludeSpaces }) => {
 
+    const words = text.trim() === "" ? 0 : text.trim().split(/\s+/).length
+    const reading = Math.ceil(words / 180)
+
     const handleLimitCharacter = (e) => {
         if (text.length > 0) {
             return
@@ -37,7 +40,7 @@ const Controls = ({ text, limitCharacter, limitValue, excludeSpaces, setLimitVal
                     />
                 }
             </div>
-            <p>Approx. reading time: &lt;1 minute</p>
+            <p>Approx. reading time: &lt; {reading} minute(s)</p>
         </div>
     )
 }
