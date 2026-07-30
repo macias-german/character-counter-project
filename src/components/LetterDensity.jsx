@@ -25,7 +25,10 @@ const LetterDensity = ({ text }) => {
 
     return (
         <div className="percentage">
-            <h3>Letter Density</h3>
+            {
+                characterSort[0] &&
+                <h3>Letter Density</h3>
+            }
             <div className="meters">
                 <ul className="meter-list">
                     {
