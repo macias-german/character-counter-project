@@ -1,4 +1,4 @@
-# README EN CONSTRUCCION.
+# PROYECTO: CHARACTER COUNTER.
 
 ## Objetivo del proyecto.
 El objetivo final del proyecto es crear un contador de caracteres que sea capaz de diferenciar en un texto la siguiente información:
@@ -16,19 +16,23 @@ El proyecto sé ira desarrollando en varias faces a lo largo del tiempo, sé ira
 
 - _~~Desarrollo del HTML (hardcoding).~~_
 - _~~Desarrollo del CSS correspondiente.~~_
-- _**Desarrollo del Javascript para funcionalidad.**_
-- _En desarrollo..._
+- _~~Desarrollo del Javascript para funcionalidad.~~_
+- _**Desarrollo de los componentes en React**_
 
 
 ## Tecnologías utilizadas.
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23F7DF1E.svg?style=for-the-badge&logo=javascript&logoColor=black) ![React](https://img.shields.io/badge/react-%2361DAFB.svg?style=for-the-badge&logo=react&logoColor=black)
 
 
-Actualmente el proyecto utilizá únicamente HTML5 y CSS3. En vista al futuro el proyecto ira incorporando más funcionalidades y tecnologías.
+Actualmente el proyecto utilizá HTML5, CSS3, JS y React.
 
 
 ## Organización del HTML.
-El HTML se organizo todo dentro de un 'section', el mismo cuenta con un header donde se ubica la informacion del sitio y luego se separo el contenido en 'div' el cual cada uno cuenta con su propia clase para identificar de que se trata cada apartado.
+El HTML se organizó todo dentro de un 'section', el mismo cuenta con un header donde se ubica la información del sitio y luego se separó el contenido en 'div' el cual cada uno cuenta con su propia clase para identificar de que se trata cada apartado.
+
+
+## Organización de los componentes.
+Se organizó todo el contenido separado por los 'div' y se componentizo todo según su contenido correspondiente.
 
 
 ## Resolución del CSS.
