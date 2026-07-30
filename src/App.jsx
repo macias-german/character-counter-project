@@ -1,15 +1,18 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { Header } from './components/Header.jsx'
 import { WriteArea } from './components/WriteArea.jsx'
 import { Controls } from './components/Controls.jsx'
 import { GeneralCounters } from './components/GeneralCounters.jsx'
 import { LetterDensity } from './components/LetterDensity.jsx'
+import { ThemeContext } from './context/ThemeContext.jsx'
 
 const App = () => {
   const [text, setText] = useState("")
   const [excludeSpaces, setExcludeSpaces] = useState(false)
   const [limitCharacter, setLimitCharacter] = useState(false)
   const [limitValue, setLimitValue] = useState(300)
+
+  const { dark, handleDarkTheme } = useContext(ThemeContext)
 
   const handleText = (data) => {
     setText(data)
@@ -23,11 +26,16 @@ const App = () => {
   const handleLimitValue = (limit) => {
     setLimitValue(limit)
   }
+  const handleToggleTheme = () => {
+    setToggleTheme(!toggleTheme)
+  }
 
 
   return (
-    <section>
-      <Header />
+    <section className={`${dark ? "dark-theme" : ""}`}>
+      <Header
+        handleDarkTheme={handleDarkTheme}
+      />
       <WriteArea
         text={text}
         handleText={handleText}

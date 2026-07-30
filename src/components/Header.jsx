@@ -1,14 +1,14 @@
 import logo from "../assets/logo.webp";
 import themeIcon from "../assets/theme-icon.webp";
 
-const Header = () => {
+const Header = ({ dark, handleDarkTheme }) => {
     return (
         <header>
             <hgroup>
-                <img src={logo} alt="Logo de la aplicacion Character Counter." />
+                <img src={logo} alt="Character Counter application logo." />
                 <h2>Character Counter</h2>
             </hgroup>
-            <button><img src={themeIcon} alt="Imagen del cambio de tema claro/oscuro." /></button>
+            <button><img src={themeIcon} alt="Image of the light/dark theme change." onClick={() => handleDarkTheme(!dark)} /></button>
         </header>
     )
 }
