@@ -1,13 +1,13 @@
-const WriteArea = ({ text, setText, limitCharacter, limitValue }) => {
+const WriteArea = ({ text, handleText, limitCharacter, limitValue }) => {
 
     const handleChangeText = (e) => {
         const value = e.target.value
         if (limitCharacter) {
             if (value.length <= limitValue) {
-                setText(value)
+                handleText(value)
             }
         } else {
-            setText(value)
+            handleText(value)
         }
     }
 

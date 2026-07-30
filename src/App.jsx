@@ -17,7 +17,7 @@ const App = () => {
   const handleExcludeSpaces = (excluded) => {
     setExcludeSpaces(excluded)
   }
-  const handleLimitCharacter = (excluded) => {
+  const handleLimitCharacters = (excluded) => {
     setLimitCharacter(excluded)
   }
   const handleLimitValue = (limit) => {
@@ -30,7 +30,7 @@ const App = () => {
       <Header />
       <WriteArea
         text={text}
-        setText={handleText}
+        handleText={handleText}
         limitCharacter={limitCharacter}
         limitValue={limitValue}
       />
@@ -39,9 +39,9 @@ const App = () => {
         limitCharacter={limitCharacter}
         limitValue={limitValue}
         excludeSpaces={excludeSpaces}
-        setLimitValue={handleLimitValue}
-        setLimitCharacter={handleLimitCharacter}
-        setExcludeSpaces={handleExcludeSpaces}
+        handleLimitValue={handleLimitValue}
+        handleLimitCharacter={handleLimitCharacters}
+        handleExcludeSpaces={handleExcludeSpaces}
       />
       <GeneralCounters
         excludeSpaces={excludeSpaces}

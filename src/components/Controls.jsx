@@ -1,4 +1,4 @@
-const Controls = ({ text, limitCharacter, limitValue, excludeSpaces, setLimitValue, setLimitCharacter, setExcludeSpaces }) => {
+const Controls = ({ text, limitCharacter, limitValue, excludeSpaces, handleLimitValue, handleLimitCharacters, handleExcludeSpaces }) => {
 
     const words = text.trim() === "" ? 0 : text.trim().split(/\s+/).length
     const readingWords = Math.ceil(words / 5)
@@ -7,7 +7,7 @@ const Controls = ({ text, limitCharacter, limitValue, excludeSpaces, setLimitVal
     const seconds = reading > 1 ? "s" : ""
 
     const handleLimitCharacter = (e) => {
-        setLimitCharacter(!limitCharacter)
+        handleLimitCharacters(!limitCharacter)
     }
 
     return (
@@ -17,7 +17,7 @@ const Controls = ({ text, limitCharacter, limitValue, excludeSpaces, setLimitVal
                     <input
                         type="checkbox"
                         checked={excludeSpaces}
-                        onChange={() => setExcludeSpaces(!excludeSpaces)}
+                        onChange={() => handleExcludeSpaces(!excludeSpaces)}
                     />
                     Exclude Spaces
                 </label>
@@ -45,7 +45,7 @@ const Controls = ({ text, limitCharacter, limitValue, excludeSpaces, setLimitVal
                             if (text.length > 0) {
                                 return
                             } else {
-                                setLimitValue(e.target.value)
+                                handleLimitValue(e.target.value)
                             }
                         }}
                     />
