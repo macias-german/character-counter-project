@@ -1,12 +1,12 @@
 const Controls = ({ text, limitCharacter, limitValue, excludeSpaces, setLimitValue, setLimitCharacter, setExcludeSpaces }) => {
 
     const words = text.trim() === "" ? 0 : text.trim().split(/\s+/).length
-    const reading = Math.ceil(words / 180)
+    const readingWords = Math.ceil(words / 5)
+    const readingCharacters = Math.ceil(text.length / 25)
+    const reading = Math.max(readingWords, readingCharacters)
+    const seconds = reading > 1 ? "s" : ""
 
     const handleLimitCharacter = (e) => {
-        if (text.length > 0) {
-            return
-        }
         setLimitCharacter(!limitCharacter)
     }
 
@@ -21,14 +21,19 @@ const Controls = ({ text, limitCharacter, limitValue, excludeSpaces, setLimitVal
                     />
                     Exclude Spaces
                 </label>
-                <label>
-                    <input
-                        type="checkbox"
-                        checked={limitCharacter}
-                        onChange={handleLimitCharacter}
-                    />
-                    Set Character Limit
-                </label>
+
+                {
+                    (text.length <= 0 || limitCharacter) &&
+                    <label>
+                        <input
+                            type="checkbox"
+                            checked={limitCharacter}
+                            onChange={handleLimitCharacter}
+                        />
+                        Set Character Limit
+                    </label>
+                }
+
                 {
                     limitCharacter &&
                     <input
@@ -36,11 +41,20 @@ const Controls = ({ text, limitCharacter, limitValue, excludeSpaces, setLimitVal
                         placeholder="Type limit..."
                         type="number"
                         value={limitValue}
-                        onChange={(e) => setLimitValue(e.target.value)}
+                        onChange={(e) => {
+                            if (text.length > 0) {
+                                return
+                            } else {
+                                setLimitValue(e.target.value)
+                            }
+                        }}
                     />
                 }
             </div>
-            <p>Approx. reading time: &lt; {reading} minute(s)</p>
+            {
+                (reading > 0) &&
+                <p>Approx. reading time: {reading} second{seconds}</p>
+            }
         </div>
     )
 }
