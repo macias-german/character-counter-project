@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { ProgressBar } from "./ProgressBar.jsx"
 
 const LetterDensity = ({ text }) => {
 
@@ -33,11 +34,7 @@ const LetterDensity = ({ text }) => {
                 <ul className="meter-list">
                     {
                         characterSort.slice(0, 5).map(character =>
-                            <li key={character.letter}><label>
-                                <span className="letter">{character.letter.toUpperCase()}</span>
-                                <meter min="0" max="100" value={character.percentage}></meter>
-                                <span className="letter-value">{character.count} ({character.percentage.toFixed(2)}%)</span>
-                            </label></li>
+                            <ProgressBar key={character.letter} character={character} />
                         )
                     }
                 </ul>
@@ -48,11 +45,7 @@ const LetterDensity = ({ text }) => {
                         <ul className="meter-list">
                             {
                                 characterSort.slice(5, characterSort.length).map(character =>
-                                    <li key={character.letter}><label>
-                                        <span className="letter">{character.letter.toUpperCase()}</span>
-                                        <meter min="0" max="100" value={character.percentage}></meter>
-                                        <span className="letter-value">{character.count} ({character.percentage.toFixed(2)}%)</span>
-                                    </label></li>
+                                    <ProgressBar key={character.letter} character={character} />
                                 )
                             }
                         </ul>

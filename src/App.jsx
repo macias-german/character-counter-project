@@ -40,7 +40,7 @@ const App = () => {
         limitValue={limitValue}
         excludeSpaces={excludeSpaces}
         handleLimitValue={handleLimitValue}
-        handleLimitCharacter={handleLimitCharacters}
+        handleLimitCharacters={handleLimitCharacters}
         handleExcludeSpaces={handleExcludeSpaces}
       />
       <GeneralCounters
