@@ -13,15 +13,17 @@ const Controls = ({ text, limitCharacter, limitValue, excludeSpaces, handleLimit
     return (
         <div className="controls">
             <div className="checkbox">
-                <label>
-                    <input
-                        type="checkbox"
-                        checked={excludeSpaces}
-                        onChange={() => handleExcludeSpaces(!excludeSpaces)}
-                    />
-                    Exclude Spaces
-                </label>
-
+                {
+                    text.includes(" ") &&
+                    <label>
+                        <input
+                            type="checkbox"
+                            checked={excludeSpaces}
+                            onChange={() => handleExcludeSpaces(!excludeSpaces)}
+                        />
+                        Exclude Spaces
+                    </label>
+                }
                 {
                     (text.length <= 0 || limitCharacter) &&
                     <label>
@@ -33,7 +35,6 @@ const Controls = ({ text, limitCharacter, limitValue, excludeSpaces, handleLimit
                         Set Character Limit
                     </label>
                 }
-
                 {
                     limitCharacter &&
                     <input
