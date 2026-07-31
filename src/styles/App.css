@@ -1,4 +1,4 @@
-/* ---------- CONFIGURACION GENERAL ---------- */
+/* ---------- GENERAL CONFIGURATION ---------- */
 @font-face {
     font-family: inter;
     src: url(../assets/inter.ttf);
@@ -11,10 +11,7 @@
     font-family: inter;
 }
 
-html {
-    scrollbar-gutter: stable;
-}
-
+/* ---------- DARK THEME ---------- */
 :root {
     --primary-bg: #12131A;
     --secondary-bg: #1C1F2A;
@@ -28,21 +25,48 @@ html {
     --light: #525563;
 }
 
-/* ---------- CONFIGURACION BODY, HEADER, SECTION ---------- */
-body {
+/* ---------- LIGHT THEME---------- */
+.light-theme {
+    --primary-bg: #EDECE5;
+    --secondary-bg: #E3E0D5;
+    --primary-text: #0D0D08;
+    --secondary-text: #4B4836;
+    --meter-bars: #2E6400;
+    --borders: #D5D2C5;
+    --light: #ADAA9C;
+}
+
+html {
+    scrollbar-gutter: stable;
+    background-color: var(--primary-bg);
+}
+
+html:has(.light-theme) {
+    background-color: #EDECE5;
+}
+
+html,
+body,
+#root {
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* ---------- MAIN, HEADER AND SECTION CONFIGURATION ---------- */
+main {
+    width: 100%;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     background-color: var(--primary-bg);
-    color: white;
+    color: var(--primary-text);
 }
 
 section {
     background-color: var(--primary-bg);
     height: 100%;
-    max-height: 1000px;
     width: 100%;
     max-width: 1000px;
     padding: 15px;
@@ -90,7 +114,7 @@ header button:hover {
     border-color: var(--borders);
 }
 
-/* ---------- PRIMER DIV: WRITE-AREA ---------- */
+/* ---------- FIRST DIV: WRITE-AREA ---------- */
 .write-area {
     display: flex;
     flex-direction: column;
@@ -125,7 +149,7 @@ header button:hover {
     box-shadow: 0 0 5px var(--light);
 }
 
-/* ---------- SEGUNDO DIV: CONTROLS ---------- */
+/* ---------- SECOND DIV: CONTROLS ---------- */
 .controls {
     display: flex;
     justify-content: space-between;
@@ -179,7 +203,7 @@ header button:hover {
     margin: 0;
 }
 
-/* ---------- TERCER DIV: GENERAL-COUNTER ---------- */
+/* ---------- THIRD DIV: GENERAL-COUNTER ---------- */
 .general-counter {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -233,7 +257,7 @@ header button:hover {
     transition: 0.3s;
 }
 
-/* ---------- CUARTO DIV: PERCENTAGE ---------- */
+/* ---------- FOURTH DIV: PERCENTAGE ---------- */
 .percentage {
     display: flex;
     flex-direction: column;
@@ -285,6 +309,10 @@ header button:hover {
 .meter-list meter::-webkit-meter-optimum-value {
     background-color: var(--meter-bars);
     border-radius: 5px;
+}
+
+.percentage details {
+    background-color: var(--primary-bg);
 }
 
 .percentage details summary {

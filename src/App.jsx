@@ -12,7 +12,7 @@ const App = () => {
   const [limitCharacter, setLimitCharacter] = useState(false)
   const [limitValue, setLimitValue] = useState(300)
 
-  const { dark, handleDarkTheme } = useContext(ThemeContext)
+  const { light, handleLightTheme } = useContext(ThemeContext)
 
   const handleText = (data) => {
     setText(data)
@@ -26,39 +26,37 @@ const App = () => {
   const handleLimitValue = (limit) => {
     setLimitValue(limit)
   }
-  const handleToggleTheme = () => {
-    setToggleTheme(!toggleTheme)
-  }
-
 
   return (
-    <section className={`${dark ? "dark-theme" : ""}`}>
-      <Header
-        handleDarkTheme={handleDarkTheme}
-      />
-      <WriteArea
-        text={text}
-        handleText={handleText}
-        limitCharacter={limitCharacter}
-        limitValue={limitValue}
-      />
-      <Controls
-        text={text}
-        limitCharacter={limitCharacter}
-        limitValue={limitValue}
-        excludeSpaces={excludeSpaces}
-        handleLimitValue={handleLimitValue}
-        handleLimitCharacters={handleLimitCharacters}
-        handleExcludeSpaces={handleExcludeSpaces}
-      />
-      <GeneralCounters
-        excludeSpaces={excludeSpaces}
-        text={text}
-      />
-      <LetterDensity
-        text={text}
-      />
-    </section>
+    <main className={`${light ? "light-theme" : ""}`}>
+      <section>
+        <Header
+          handleLightTheme={handleLightTheme}
+        />
+        <WriteArea
+          text={text}
+          handleText={handleText}
+          limitCharacter={limitCharacter}
+          limitValue={limitValue}
+        />
+        <Controls
+          text={text}
+          limitCharacter={limitCharacter}
+          limitValue={limitValue}
+          excludeSpaces={excludeSpaces}
+          handleLimitValue={handleLimitValue}
+          handleLimitCharacters={handleLimitCharacters}
+          handleExcludeSpaces={handleExcludeSpaces}
+        />
+        <GeneralCounters
+          excludeSpaces={excludeSpaces}
+          text={text}
+        />
+        <LetterDensity
+          text={text}
+        />
+      </section>
+    </main>
   )
 }
 
