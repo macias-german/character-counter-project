@@ -17,7 +17,7 @@ El proyecto sé ira desarrollando en varias faces a lo largo del tiempo, sé ira
 - _~~Desarrollo del HTML (hardcoding).~~_
 - _~~Desarrollo del CSS correspondiente.~~_
 - _~~Desarrollo del Javascript para funcionalidad.~~_
-- _**Desarrollo de los componentes en React**_
+- _~~Desarrollo de los componentes en React~~_
 
 
 ## Tecnologías utilizadas.
@@ -135,36 +135,24 @@ La etiqueta "details" utiliza "summary" como nombre interno, por lo cual la modi
 Al realizar el desplegable del details me encontré con el problema de que el contenido se movía hacia arriba y hacia la izquierda, por lo cual tuve que revisar el porqué pasaba esto.
 
 
-- _Al atribuirle "flex-start" al body, lo que hace es que todo el contenido se renderice directamente desde el comienzo del contenedor hijo, evitando que el contenido sea empujado hacia donde no debería._
-
-
-`body { justify-content: flex-start; }`
-
-
 - _Para evitar el desplazamiento por culpa de la barra de navegación de los navegadores, lo que tuve que decirle al HTML que reserve por defecto los pixeles donde se encontrara la scroll bar en caso de que aparezca alguna._
 
 
 `html { scrollbar-gutter: stable; }`
 
 
-### Crear simbolo "<" como texto en HTML.
-Debido a que las etiquetas utilizan los simbolos " " para su sintaxis, al querer ingresar una como texto, ya sea para un título o para un párrafo la misma genera un error dentro del HTML, ya que busca crear una etiqueta.
-
-
-- _Para poder generar como texto dicho símbolo se utilizó el código "lt" que significa "less than" con el símbolo & al inicio para indicarte que estamos hablando de un carácter especial._
-
-
-`&lt;`
+### Creación de animaciones.
+Solicite ayuda a la inteligencia artificial para lo que sería todas las animaciones de aparición y desvanecimiento.
 
 
 ## Captura del estado actual del proyecto.
 - _Muestra del estado actual del proyecto en versión de computadora._
 <div align="center">
-  <img src="./preview/preview-pc.webp" alt="Imagen de muestra de la versión para computadora de Character Counter.">
+  <img src="./src/preview/preview-pc.webp" alt="Imagen de muestra de la versión para computadora de Character Counter.">
 </div>
 
 
 - _Muestra del estado actual del proyecto en versión de celular._
 <div align="center">
-  <img src="./preview/preview-mobile.webp" alt="Imagen de muestra de la versión para celular de Character Counter.">
+  <img src="./src/preview/preview-mobile.webp" alt="Imagen de muestra de la versión para celular de Character Counter.">
 </div>
