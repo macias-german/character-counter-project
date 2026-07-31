@@ -14,8 +14,7 @@ const Controls = ({ text, limitCharacter, limitValue, excludeSpaces, handleLimit
         <div className="controls">
             <div className="checkbox">
                 {
-                    text.includes(" ") &&
-                    <label>
+                    <label className={`animation-box ${text.includes(" ") ? 'show' : 'hide'}`}>
                         <input
                             type="checkbox"
                             checked={excludeSpaces}
@@ -25,8 +24,7 @@ const Controls = ({ text, limitCharacter, limitValue, excludeSpaces, handleLimit
                     </label>
                 }
                 {
-                    (text.length <= 0 || limitCharacter) &&
-                    <label>
+                    <label className={`animation-box ${(text.length <= 0 || limitCharacter) ? 'show' : 'hide'}`}>
                         <input
                             type="checkbox"
                             checked={limitCharacter}
@@ -36,9 +34,8 @@ const Controls = ({ text, limitCharacter, limitValue, excludeSpaces, handleLimit
                     </label>
                 }
                 {
-                    limitCharacter &&
                     <input
-                        className="limiter"
+                        className={`limiter animation-box ${limitCharacter ? 'show' : 'hide'}`}
                         placeholder="Type limit..."
                         type="number"
                         value={limitValue}
@@ -53,8 +50,7 @@ const Controls = ({ text, limitCharacter, limitValue, excludeSpaces, handleLimit
                 }
             </div>
             {
-                (reading > 0) &&
-                <p>Approx. reading time: {reading} second{seconds}</p>
+                <p className={`limiter animation-box ${reading > 0 ? 'show' : 'hide'}`}>Approx. reading time: {reading} second{seconds}</p>
             }
         </div>
     )
