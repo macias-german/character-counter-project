@@ -190,6 +190,11 @@ header button:hover {
     cursor: pointer;
 }
 
+.limit-zone {
+    display: flex;
+    gap: 15px;
+}
+
 .checkbox label input:checked {
     background-color: var(--secondary-text);
     box-shadow: 0 0 10px var(--light);
@@ -407,8 +412,22 @@ header button:hover {
     }
 
     .checkbox {
-        flex-direction: column;
+        flex-direction: column-reverse;
         gap: 5px;
+    }
+
+    .animation-box {
+        transition: max-height 0.3s ease, opacity 0.2s ease, margin 0.3s ease;
+    }
+
+    .animation-box.show {
+        max-height: 50px;
+    }
+
+    .animation-box.hide {
+        max-height: 0px;
+        margin-right: 0;
+        margin-bottom: -5px;
     }
 
     .general-counter {

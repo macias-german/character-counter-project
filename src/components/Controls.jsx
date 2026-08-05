@@ -23,31 +23,33 @@ const Controls = ({ text, limitCharacter, limitValue, excludeSpaces, handleLimit
                         Exclude Spaces
                     </label>
                 }
-                {
-                    <label className={`animation-box ${(text.length <= 0 || limitCharacter) ? 'show' : 'hide'}`}>
+                <div className="limit-zone">
+                    {
+                        <label className={`animation-box ${(text.length <= 0 || limitCharacter) ? 'show' : 'hide'}`}>
+                            <input
+                                type="checkbox"
+                                checked={limitCharacter}
+                                onChange={handleLimitCharacter}
+                            />
+                            Set Character Limit
+                        </label>
+                    }
+                    {
                         <input
-                            type="checkbox"
-                            checked={limitCharacter}
-                            onChange={handleLimitCharacter}
+                            className={`limiter animation-box ${limitCharacter ? 'show' : 'hide'}`}
+                            placeholder="Type limit..."
+                            type="number"
+                            value={limitValue}
+                            onChange={(e) => {
+                                if (text.length > 0) {
+                                    return
+                                } else {
+                                    handleLimitValue(e.target.value)
+                                }
+                            }}
                         />
-                        Set Character Limit
-                    </label>
-                }
-                {
-                    <input
-                        className={`limiter animation-box ${limitCharacter ? 'show' : 'hide'}`}
-                        placeholder="Type limit..."
-                        type="number"
-                        value={limitValue}
-                        onChange={(e) => {
-                            if (text.length > 0) {
-                                return
-                            } else {
-                                handleLimitValue(e.target.value)
-                            }
-                        }}
-                    />
-                }
+                    }
+                </div>
             </div>
             {
                 <p className={`limiter animation-box ${reading > 0 ? 'show' : 'hide'}`}>Approx. reading time: {reading} second{seconds}</p>
